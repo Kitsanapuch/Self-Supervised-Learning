@@ -15,9 +15,10 @@ python -m unittest discover -v
 python -m src.experiment --smoke --mode ssl --mask both --epochs 1 --pretrain-epochs 1 --output runs/smoke
 ```
 
-ทดลองข้อมูลจริงหนึ่งงาน (ดาวน์โหลด UCI HAR อัตโนมัติประมาณ 60 MB):
+ทดลองข้อมูลจริงหนึ่งงาน (สั่งดาวน์โหลด UCI HAR ประมาณ 60 MB และตรวจ checksum ก่อน):
 
 ```bash
+python -m src.download_data
 python -m src.experiment --mode supervised --fraction 0.1 --output runs/baseline
 python -m src.experiment --mode ssl --mask both --fraction 0.1 --output runs/ssl
 ```
@@ -75,3 +76,7 @@ Dataset: Reyes-Ortiz et al. (2013), Human Activity Recognition Using Smartphones
 Related work (ยังไม่ได้ reproduce): TS-TCC https://arxiv.org/abs/2106.14112 ; TS2Vec https://arxiv.org/abs/2106.10466 . โค้ดนี้เป็น masked reconstruction baseline เขียนใหม่ ไม่ใช่ implementation ของสองบทความดังกล่าว
 
 ข้อมูลที่ใช้รันในชุดส่งมอบดาวน์โหลดจาก teaching mirror ของ UCI HAR เพราะ origin ช้า ดู URL, SHA-256 และขอบเขตการตรวจใน `docs/DATA_PROVENANCE.json` หากต้องการทำซ้ำด้วย archive เดียวกันให้ดาวน์โหลด URL ดังกล่าวเป็น `data/uci_har.zip` แล้วคัดลอก provenance ไป `data/provenance.json`
+
+## ชุดส่งมอบ
+
+ดู `START_HERE_TH.md` เพื่ออ่านไฟล์ตามลำดับ ผลวิจัยจริงทั้งหมดอยู่ใน `results/` และวิธีสร้างรายงานซ้ำอยู่ใน `docs/REPRODUCE.md`

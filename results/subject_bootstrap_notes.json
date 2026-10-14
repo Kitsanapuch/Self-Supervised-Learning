@@ -1,0 +1,25 @@
+{
+  "status": "exploratory supplemental analysis",
+  "resampling_unit": "test subject, with replacement",
+  "test_subjects": [
+    2,
+    4,
+    9,
+    10,
+    12,
+    13,
+    18,
+    20,
+    24
+  ],
+  "replicates": 5000,
+  "seed": 20261014,
+  "interval": "paired percentile 95%",
+  "scope": "conditional on fixed training split and fitted seeds; captures test-subject sampling variability only",
+  "limitations": [
+    "only nine subjects",
+    "not a population guarantee",
+    "no multiple-comparison correction",
+    "training-split uncertainty not captured"
+  ]
+}

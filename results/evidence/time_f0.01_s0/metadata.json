@@ -1,0 +1,190 @@
+{
+  "train_subjects": [
+    3,
+    5,
+    6,
+    7,
+    8,
+    11,
+    14,
+    15,
+    16,
+    17,
+    21,
+    22,
+    23,
+    27,
+    28,
+    29,
+    30
+  ],
+  "val_subjects": [
+    26,
+    19,
+    25,
+    1
+  ],
+  "test_subjects": [
+    2,
+    4,
+    9,
+    10,
+    12,
+    13,
+    18,
+    20,
+    24
+  ],
+  "mean": [
+    [
+      [
+        0.8116739392280579
+      ],
+      [
+        0.020018791779875755
+      ],
+      [
+        0.06024091690778732
+      ],
+      [
+        -0.0013544938992708921
+      ],
+      [
+        -0.00028399063739925623
+      ],
+      [
+        -0.0004768110520672053
+      ]
+    ]
+  ],
+  "std": [
+    [
+      [
+        0.4035680890083313
+      ],
+      [
+        0.3844432830810547
+      ],
+      [
+        0.36842072010040283
+      ],
+      [
+        0.3982340097427368
+      ],
+      [
+        0.38002678751945496
+      ],
+      [
+        0.2611578702926636
+      ]
+    ]
+  ],
+  "dataset_provenance": {
+    "download_url": "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip",
+    "canonical_dataset": "https://doi.org/10.24432/C54S4K",
+    "source_note": "Teaching mirror of UCI HAR; official endpoint was too slow. Shape, subject IDs, labels and archive README checked. Not independently byte-verified against a completed origin download.",
+    "sha256": "50dabbc800629611831a85b8b71c87040525ca4af6a152c6ba9360ecee6b92dc"
+  },
+  "config": {
+    "mode": "ssl",
+    "mask": "time",
+    "fraction": 0.01,
+    "seed": 0,
+    "epochs": 30,
+    "pretrain_epochs": 30,
+    "batch_size": 128,
+    "lr": 0.001,
+    "data_dir": "data",
+    "output": "runs/full/time_f0.01_s0",
+    "device": "cpu",
+    "encoder_checkpoint": null,
+    "smoke": false
+  },
+  "git_commit": "a96df30d8c308edc33b0113d6124420fa23e2d6e",
+  "git_dirty": false,
+  "data_sha256": "50dabbc800629611831a85b8b71c87040525ca4af6a152c6ba9360ecee6b92dc",
+  "python": "3.14.6",
+  "torch": "2.14.1",
+  "numpy": "2.5.4",
+  "labeled_indices": [
+    207,
+    225,
+    297,
+    343,
+    394,
+    431,
+    446,
+    570,
+    590,
+    628,
+    831,
+    843,
+    935,
+    1067,
+    1102,
+    1164,
+    1202,
+    1335,
+    1397,
+    1493,
+    1569,
+    1608,
+    1625,
+    1734,
+    1859,
+    2236,
+    2381,
+    2528,
+    2648,
+    2672,
+    2684,
+    2758,
+    2922,
+    3023,
+    3055,
+    3291,
+    3350,
+    3403,
+    3421,
+    3444,
+    3457,
+    3646,
+    3681,
+    3691,
+    3756,
+    4076,
+    4216,
+    4226,
+    4321,
+    4612,
+    4677,
+    4716,
+    4776,
+    4817,
+    4838,
+    4888,
+    4936,
+    5165,
+    5272,
+    5368,
+    5523
+  ],
+  "labeled_count": 61,
+  "actual_fraction": 0.010438056125941135,
+  "classes": [
+    "walking",
+    "walking_upstairs",
+    "walking_downstairs",
+    "sitting",
+    "standing",
+    "laying"
+  ],
+  "signals": [
+    "total_acc_x",
+    "total_acc_y",
+    "total_acc_z",
+    "body_gyro_x",
+    "body_gyro_y",
+    "body_gyro_z"
+  ]
+}

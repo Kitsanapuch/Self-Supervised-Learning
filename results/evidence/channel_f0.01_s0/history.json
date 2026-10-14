@@ -1,0 +1,332 @@
+[
+  {
+    "stage": "pretrain",
+    "epoch": 1,
+    "loss": 0.7057141667355584
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 2,
+    "loss": 0.5603781412269545
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 3,
+    "loss": 0.5057577957934015
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 4,
+    "loss": 0.47447346045822414
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 5,
+    "loss": 0.45111814457451455
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 6,
+    "loss": 0.41989862694469404
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 7,
+    "loss": 0.4073709047754524
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 8,
+    "loss": 0.3955718211365595
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 9,
+    "loss": 0.386919529449442
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 10,
+    "loss": 0.3968843438501312
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 11,
+    "loss": 0.3909944951493474
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 12,
+    "loss": 0.36984245023198686
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 13,
+    "loss": 0.3718589865165896
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 14,
+    "loss": 0.371412080783374
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 15,
+    "loss": 0.34939203824921883
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 16,
+    "loss": 0.3463443470768207
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 17,
+    "loss": 0.3500463612923306
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 18,
+    "loss": 0.34095076828032306
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 19,
+    "loss": 0.3447114424824633
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 20,
+    "loss": 0.3409873326293089
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 21,
+    "loss": 0.3248054640167466
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 22,
+    "loss": 0.329804969111344
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 23,
+    "loss": 0.33511127179653005
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 24,
+    "loss": 0.3155425572379006
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 25,
+    "loss": 0.3188496600227108
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 26,
+    "loss": 0.31893574330677815
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 27,
+    "loss": 0.31634332467071985
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 28,
+    "loss": 0.313719333870455
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 29,
+    "loss": 0.30764178545160054
+  },
+  {
+    "stage": "pretrain",
+    "epoch": 30,
+    "loss": 0.3013068440024123
+  },
+  {
+    "stage": "finetune",
+    "epoch": 1,
+    "loss": 1.913751244544983,
+    "val_macro_f1": 0.09175444247410157
+  },
+  {
+    "stage": "finetune",
+    "epoch": 2,
+    "loss": 1.7882368564605713,
+    "val_macro_f1": 0.22658856866235397
+  },
+  {
+    "stage": "finetune",
+    "epoch": 3,
+    "loss": 1.671512484550476,
+    "val_macro_f1": 0.33409641896892733
+  },
+  {
+    "stage": "finetune",
+    "epoch": 4,
+    "loss": 1.5652902126312256,
+    "val_macro_f1": 0.47594799165797713
+  },
+  {
+    "stage": "finetune",
+    "epoch": 5,
+    "loss": 1.4707380533218384,
+    "val_macro_f1": 0.5833092186297141
+  },
+  {
+    "stage": "finetune",
+    "epoch": 6,
+    "loss": 1.3880960941314697,
+    "val_macro_f1": 0.619529891594533
+  },
+  {
+    "stage": "finetune",
+    "epoch": 7,
+    "loss": 1.3166735172271729,
+    "val_macro_f1": 0.6164885535130927
+  },
+  {
+    "stage": "finetune",
+    "epoch": 8,
+    "loss": 1.2551405429840088,
+    "val_macro_f1": 0.6044320985205804
+  },
+  {
+    "stage": "finetune",
+    "epoch": 9,
+    "loss": 1.2019262313842773,
+    "val_macro_f1": 0.5983512970069682
+  },
+  {
+    "stage": "finetune",
+    "epoch": 10,
+    "loss": 1.1555062532424927,
+    "val_macro_f1": 0.5910794568205749
+  },
+  {
+    "stage": "finetune",
+    "epoch": 11,
+    "loss": 1.1145386695861816,
+    "val_macro_f1": 0.6000690771457843
+  },
+  {
+    "stage": "finetune",
+    "epoch": 12,
+    "loss": 1.0778915882110596,
+    "val_macro_f1": 0.6018895523891123
+  },
+  {
+    "stage": "finetune",
+    "epoch": 13,
+    "loss": 1.0446335077285767,
+    "val_macro_f1": 0.6034334961135133
+  },
+  {
+    "stage": "finetune",
+    "epoch": 14,
+    "loss": 1.0140186548233032,
+    "val_macro_f1": 0.6094159730454275
+  },
+  {
+    "stage": "finetune",
+    "epoch": 15,
+    "loss": 0.9854625463485718,
+    "val_macro_f1": 0.6135924901815234
+  },
+  {
+    "stage": "finetune",
+    "epoch": 16,
+    "loss": 0.9585108757019043,
+    "val_macro_f1": 0.6178923645341533
+  },
+  {
+    "stage": "finetune",
+    "epoch": 17,
+    "loss": 0.9328173995018005,
+    "val_macro_f1": 0.6200781945294312
+  },
+  {
+    "stage": "finetune",
+    "epoch": 18,
+    "loss": 0.9081413149833679,
+    "val_macro_f1": 0.6251164258766532
+  },
+  {
+    "stage": "finetune",
+    "epoch": 19,
+    "loss": 0.884343683719635,
+    "val_macro_f1": 0.6357289495495714
+  },
+  {
+    "stage": "finetune",
+    "epoch": 20,
+    "loss": 0.8613709211349487,
+    "val_macro_f1": 0.642475307020585
+  },
+  {
+    "stage": "finetune",
+    "epoch": 21,
+    "loss": 0.8392245769500732,
+    "val_macro_f1": 0.652658535495717
+  },
+  {
+    "stage": "finetune",
+    "epoch": 22,
+    "loss": 0.8179259896278381,
+    "val_macro_f1": 0.6604278559818731
+  },
+  {
+    "stage": "finetune",
+    "epoch": 23,
+    "loss": 0.7974867820739746,
+    "val_macro_f1": 0.6710055559520557
+  },
+  {
+    "stage": "finetune",
+    "epoch": 24,
+    "loss": 0.777895450592041,
+    "val_macro_f1": 0.6797975842918502
+  },
+  {
+    "stage": "finetune",
+    "epoch": 25,
+    "loss": 0.7591181397438049,
+    "val_macro_f1": 0.6907285767533727
+  },
+  {
+    "stage": "finetune",
+    "epoch": 26,
+    "loss": 0.7411132454872131,
+    "val_macro_f1": 0.7024574686471357
+  },
+  {
+    "stage": "finetune",
+    "epoch": 27,
+    "loss": 0.723843514919281,
+    "val_macro_f1": 0.71539780386253
+  },
+  {
+    "stage": "finetune",
+    "epoch": 28,
+    "loss": 0.7072843313217163,
+    "val_macro_f1": 0.7219628866111698
+  },
+  {
+    "stage": "finetune",
+    "epoch": 29,
+    "loss": 0.6914222836494446,
+    "val_macro_f1": 0.7289991714514361
+  },
+  {
+    "stage": "finetune",
+    "epoch": 30,
+    "loss": 0.6762466430664062,
+    "val_macro_f1": 0.7433434753198219
+  }
+]

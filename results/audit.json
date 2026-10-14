@@ -1,0 +1,16 @@
+{
+  "completed_configurations": 48,
+  "test_evaluations": 144,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "all_confusion_matrices_total": 2947,
+  "metrics_recomputed": true,
+  "paired_label_subsets_verified": true,
+  "subject_disjoint_verified": true,
+  "single_data_hash_verified": true,
+  "single_training_commit_verified": true,
+  "synthetic_excluded": true
+}

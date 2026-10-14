@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "completed_runs": 48,
+  "evaluation_records": 144,
+  "checks": [
+    "finite losses and weights",
+    "class-stratified counts",
+    "paired labeled subsets",
+    "train-only normalization",
+    "subject-disjoint partitions",
+    "data checksum",
+    "all saved metric arithmetic",
+    "validation-selected best checkpoint score",
+    "independent checkpoint reload and three-condition metric replay"
+  ],
+  "checkpoint_replay": "both_f0.1_s0"
+}
