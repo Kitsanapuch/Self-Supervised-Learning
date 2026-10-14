@@ -1,0 +1,6 @@
+{
+  "download_url": "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip",
+  "canonical_dataset": "https://doi.org/10.24432/C54S4K",
+  "source_note": "Teaching mirror of UCI HAR; official endpoint was too slow. Shape, subject IDs, labels and archive README checked. Not independently byte-verified against a completed origin download.",
+  "sha256": "50dabbc800629611831a85b8b71c87040525ca4af6a152c6ba9360ecee6b92dc"
+}
