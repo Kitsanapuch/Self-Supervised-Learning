@@ -30,7 +30,7 @@ git ls-files 'data/**' 'runs/**' '*.pt' '*.pth' '.env*'
 
 บรรทัดแรกควรว่าง (ไม่มีไฟล์เปลี่ยน) และบรรทัดสุดท้ายควรว่าง (ไม่มีข้อมูลดิบ น้ำหนักโมเดล หรือไฟล์สภาพแวดล้อมใน Git) ประวัติเดิมแสดงผู้สร้าง commit เป็น `Codex <codex@localhost>`; ประวัตินี้จะมองเห็นได้ใน public repository
 
-## 4. เชื่อมกับ GitHub และ push
+## 4. เชื่อมกับ GitHub และ push สอง branch
 
 แทน `YOUR_USERNAME` ด้วยชื่อบัญชี GitHub ของคุณ ใช้ URL ของ repository ว่างที่เพิ่งสร้าง:
 
@@ -38,9 +38,11 @@ git ls-files 'data/**' 'runs/**' '*.pt' '*.pth' '.env*'
 git remote set-url origin https://github.com/YOUR_USERNAME/sensor-ssl.git
 git remote -v
 git push -u origin main
+git switch DevTutor
+git push -u origin DevTutor
 ```
 
-จากนั้นเปิด `https://github.com/YOUR_USERNAME/sensor-ssl` เพื่อตรวจว่า README, กราฟ และไฟล์ใน `results/` แสดงครบ GitHub อาจขอให้ลงชื่อเข้าใช้หรือยืนยันตัวตนเมื่อ push
+จากนั้นเปิด `https://github.com/YOUR_USERNAME/sensor-ssl` เพื่อตรวจว่า README, กราฟ และไฟล์ใน `results/` แสดงครบ พร้อม branch `DevTutor` สำหรับพัฒนาต่อ GitHub อาจขอให้ลงชื่อเข้าใช้หรือยืนยันตัวตนเมื่อ push
 
 ## 5. อัปเดตครั้งถัดไป
 
@@ -51,7 +53,7 @@ git config user.name "YOUR_NAME"
 git config user.email "YOUR_EMAIL_OR_GITHUB_NOREPLY_EMAIL"
 ```
 
-เมื่อแก้ไฟล์แล้ว ใช้คำสั่งต่อไปนี้จากโฟลเดอร์ `sensor-ssl-public`:
+เมื่อแก้ไฟล์บน branch `DevTutor` แล้ว ใช้คำสั่งต่อไปนี้จากโฟลเดอร์ `sensor-ssl-public`:
 
 ```bash
 git status
