@@ -57,10 +57,11 @@ python -m src.predict --run runs/full/both_f0.1_s0 --input your_windows.npy --ou
 
 ## GitHub
 
-สร้าง repository ในเครื่องแล้ว แต่ยังไม่ได้เผยแพร่ไปยังบัญชี GitHub ใด ถ้าใช้ source ZIP ที่ไม่มี `.git` ให้ทำตาม README หากต้องการประวัติเดิม ใช้ repository.bundle ที่อยู่ในแพ็กเกจฉบับเต็ม:
+สร้าง repository ในเครื่องแล้ว แต่ยังไม่ได้เผยแพร่ไปยังบัญชี GitHub ใด source ZIP ไม่มีโฟลเดอร์ `.git` แต่มี `repository.bundle` สำหรับกู้ประวัติเดิม ดู [คู่มืออัปโหลด GitHub](docs/GITHUB_PUBLISH_TH.md) ซึ่งมีคำสั่งตั้งแต่แตก ZIP จน push ครบ
 
 ```bash
-git clone repository.bundle sensor-ssl
+git clone sensor-ssl/repository.bundle sensor-ssl-public
+cd sensor-ssl-public
 ```
 
 เลือกชื่อ repo และ license ร่วมกับอาจารย์ก่อน publish ข้อมูล raw และ model weights ถูก ignore ตามปกติ หากจะแชร์ weights ให้ใช้ release asset แทน commit ไฟล์ใหญ่

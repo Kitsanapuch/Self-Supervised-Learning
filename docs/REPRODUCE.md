@@ -13,6 +13,8 @@ python run_matrix.py --runs runs/full --epochs 30 --pretrain-epochs 30
 
 Do not mix protocols in the same output directory. Complete output folders are skipped on resume, while incomplete folders require inspection and relocation before retrying. Downloaded data are checked against the exact mirror archive checksum used in the results.
 
+The command above is for a fresh source checkout without `runs/full`. If you extracted the complete archive, it already contains the delivered runs, so the runner will skip them. Use a separate fresh source checkout to rerun the full matrix and rebuild its report, or choose a new `--runs` path for exploratory retraining.
+
 ## Rebuild the report and audit
 
 ```bash

@@ -1,6 +1,41 @@
-# Sensor SSL: reproducible master's research project
+# Sensor SSL · Human Activity Recognition
 
-โปรเจกต์วิจัย Self-Supervised Learning สำหรับจำแนกกิจกรรมจากเซนเซอร์ เมื่อข้อมูลติดป้ายกำกับมีน้อย พร้อมการทดลองสัญญาณขาดหาย สถานะ: empirical study / research in progress ไม่อ้างว่าเป็นวิธีใหม่หรือพร้อมตีพิมพ์
+**Self-supervised learning with limited labels and missing sensor signals**
+
+Empirical study · UCI HAR · 48 training runs · 144 test evaluations
+
+โปรเจกต์วิจัย Self-Supervised Learning สำหรับจำแนกกิจกรรมจากเซนเซอร์เมื่อข้อมูลติดป้ายกำกับมีน้อย พร้อมการทดลองสัญญาณขาดหาย งานนี้เป็นการศึกษาเชิงทดลองที่ตรวจซ้ำได้ ไม่อ้างว่าเป็นวิธีใหม่หรือพร้อมตีพิมพ์
+
+| เริ่มอ่าน | ทดลองซ้ำ | ตรวจผล |
+|---|---|---|
+| [คู่มือภาษาไทย](START_HERE_TH.md) · [รายงาน PDF](results/research-report.pdf) | [วิธีรันซ้ำ](docs/REPRODUCE.md) · [protocol](docs/PROTOCOL_TH.md) | [ผลภาษาไทย](results/RESULTS_TH.md) · [ผลทั้งหมด 144 รายการ](results/all_evaluations.csv) |
+
+## ผลหลัก
+
+คะแนน **Macro-F1 บน test set ที่สัญญาณครบ** (%, ค่าเฉลี่ย ± sample SD จาก 3 seeds):
+
+| Training labels | Supervised | SSL-time | ผลต่างแบบจับคู่ |
+|---:|---:|---:|---:|
+| 1% (61 ตัวอย่าง) | 68.52 ± 0.84 | **72.00 ± 1.47** | **+3.48 จุดเปอร์เซ็นต์** |
+| 5% (295 ตัวอย่าง) | 82.85 ± 4.79 | **84.86 ± 0.72** | +2.01 จุดเปอร์เซ็นต์ |
+| 10% (586 ตัวอย่าง) | 87.68 ± 2.68 | **89.01 ± 1.47** | +1.33 จุดเปอร์เซ็นต์ |
+| 100% (5,844 ตัวอย่าง) | 90.92 ± 0.46 | **91.26 ± 2.02** | +0.35 จุดเปอร์เซ็นต์ |
+
+![กราฟ Macro-F1 เมื่อสัญญาณครบและเมื่อเซนเซอร์แต่ละกลุ่มหายไป](results/comparison.png)
+
+ผลเมื่อ accelerometer หรือ gyroscope หายทั้งกลุ่มแตกต่างกันตามชนิดเซนเซอร์และวิธีฝึก จึงไม่สรุปว่า SSL วิธีใดทนต่อเซนเซอร์หายได้ทุกกรณี ขอบเขตผลนี้มีเพียงข้อมูลหนึ่งชุด การแบ่งผู้ใช้หนึ่งแบบ และ 3 random seeds ดู [ตารางครบทุกวิธี](results/RESULTS_TH.md) และ [ข้อจำกัดในรายงาน](results/research-report.pdf)
+
+## โครงสร้างโปรเจกต์
+
+| ตำแหน่ง | เนื้อหา |
+|---|---|
+| `src/` | โหลดข้อมูล ฝึกโมเดล ประเมินผล และทำนาย |
+| `run_matrix.py` | รันการทดลอง 48 configurations |
+| `scripts/` | ตรวจผล สรุปสถิติ และสร้างรายงาน |
+| `tests/` | ตรวจ split, scaling, masking และ metrics |
+| `results/` | ตารางผล กราฟ รายงาน และหลักฐาน JSON ของแต่ละ run |
+| `docs/` | protocol, งานที่เกี่ยวข้อง, draft paper และคู่มือ |
+| `START_COLAB.ipynb` | ทางเลือกสำหรับ Colab; ยังไม่ได้ทดสอบบนบริการ Colab จริง |
 
 ## เริ่มใช้งาน
 
@@ -12,7 +47,7 @@ source .venv/bin/activate
 # Windows: .venv\Scripts\activate
 python -m pip install -r requirements.txt
 python -m unittest discover -v
-python -m src.experiment --smoke --mode ssl --mask both --epochs 1 --pretrain-epochs 1 --output runs/smoke
+python -m src.experiment --smoke --mode ssl --mask time --epochs 1 --pretrain-epochs 1 --output runs/smoke
 ```
 
 ทดลองข้อมูลจริงหนึ่งงาน (สั่งดาวน์โหลด UCI HAR ประมาณ 60 MB และตรวจ checksum ก่อน):
@@ -20,7 +55,7 @@ python -m src.experiment --smoke --mode ssl --mask both --epochs 1 --pretrain-ep
 ```bash
 python -m src.download_data
 python -m src.experiment --mode supervised --fraction 0.1 --output runs/baseline
-python -m src.experiment --mode ssl --mask both --fraction 0.1 --output runs/ssl
+python -m src.experiment --mode ssl --mask time --fraction 0.1 --output runs/ssl-time
 ```
 
 รันครบ 48 configurations: 4 วิธี × 4 สัดส่วน × 3 seeds ประเมิน 3 สภาพสัญญาณต่อ configuration รวม 144 evaluations:
@@ -55,23 +90,15 @@ Test conditions: none, acc (ปิดทั้ง 3 แกนความเร�
 
 อ่าน `docs/PROTOCOL_TH.md`, `docs/PAPER_DRAFT.md`, และรายงานผลเมื่อมีใน `results/` โมเดลที่ส่งแยกจาก source ZIP สามารถใช้ร่วมกับ normalization ใน metadata ได้
 
-## GitHub public
+## เผยแพร่บน GitHub
 
-```bash
-git init
-git add .
-git commit -m "Add reproducible sensor SSL experiments"
-git branch -M main
-# สร้าง empty Public repository ใน GitHub แล้วใช้ URL ของคุณ:
-git remote add origin https://github.com/YOUR_ACCOUNT/sensor-ssl.git
-git push -u origin main
-```
+ดู [คู่มือคำสั่ง Git ภาษาไทย](docs/GITHUB_PUBLISH_TH.md) สำหรับการแตก source ZIP, กู้ประวัติ Git จาก `repository.bundle`, สร้าง repository แบบ Public และ push ขึ้น GitHub อย่างเป็นขั้นตอน ชุดไฟล์สำหรับ GitHub รวมโค้ด ผลสรุป กราฟ และหลักฐาน JSON แต่ `.gitignore` กันข้อมูลดิบ น้ำหนักโมเดล และ secrets ไว้
 
-ไม่มีการสร้าง GitHub repository ให้โดยอัตโนมัติ ไม่มีบัญชีผู้ใช้/สิทธิ์ GitHub ที่ยืนยันในแชตนี้ `.gitignore` กัน data, runs, weights และ secrets ไว้ เปิดผลสรุปที่ตรวจแล้วได้ อย่าเพิ่มข้อมูลส่วนบุคคล ผู้เขียนควรเลือก license ของโค้ดและตกลงกับอาจารย์ก่อนอนุญาตให้ผู้อื่นนำไปใช้ (public visibility ไม่เท่ากับ open-source license)
+ผู้เขียนควรเลือก license ของโค้ดและตกลงกับอาจารย์ก่อนอนุญาตให้ผู้อื่นนำไปใช้ การเปิด repository แบบ public ไม่เท่ากับการกำหนด open-source license
 
 ## Attribution
 
-Dataset: Reyes-Ortiz et al. (2013), Human Activity Recognition Using Smartphones, UCI, DOI https://doi.org/10.24432/C54S4K ; CC BY 4.0 ตามหน้า UCI https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones . ดาวน์โหลดจากต้นฉบับ ไม่รวมข้อมูลดิบใน source archive
+Dataset: Reyes-Ortiz et al. (2013), Human Activity Recognition Using Smartphones, UCI, DOI https://doi.org/10.24432/C54S4K ; CC BY 4.0 ตามหน้า UCI https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones . ชุดทดลองนี้ใช้ teaching mirror ที่บันทึก provenance ไว้ ไม่รวมข้อมูลดิบใน source archive
 
 Related work (ยังไม่ได้ reproduce): TS-TCC https://arxiv.org/abs/2106.14112 ; TS2Vec https://arxiv.org/abs/2106.10466 . โค้ดนี้เป็น masked reconstruction baseline เขียนใหม่ ไม่ใช่ implementation ของสองบทความดังกล่าว
 
