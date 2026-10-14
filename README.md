@@ -107,3 +107,4 @@ Related work (ยังไม่ได้ reproduce): TS-TCC https://arxiv.org/a
 ## ชุดส่งมอบ
 
 ดู `START_HERE_TH.md` เพื่ออ่านไฟล์ตามลำดับ ผลวิจัยจริงทั้งหมดอยู่ใน `results/` และวิธีสร้างรายงานซ้ำอยู่ใน `docs/REPRODUCE.md`
+# Self-Supervised-Learning
